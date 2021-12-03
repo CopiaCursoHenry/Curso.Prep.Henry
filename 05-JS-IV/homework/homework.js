@@ -131,13 +131,10 @@ function sumarLikesDeUsuario(usuario) {
   // Devuelve la suma
   // Tu código:
   let suma = 0;
-  for (let index = 0; index < usuario.posts.length; index++) {    
-    suma = suma + usuario.posts[index].likes ; 
-    }
-return suma;
-
-
-
+  for (let index = 0; index < usuario.posts.length; index++) {
+    suma = suma + usuario.posts[index].likes;
+  }
+  return suma;
 }
 
  function agregarMetodoCalculoDescuento(producto) {
@@ -150,7 +147,12 @@ return suma;
   // producto.porcentajeDeDescuento -> 0.2 (o simplemente ".2")
   // producto.calcularPrecioDescuento() -> 20 - (20 * 0.2)
   // Tu código:
-
+  // objectName.propertyName
+  // should add the method 'calcularPrecioDescuento' to the store item object
+  producto.calcularPrecioDescuento = function() {
+    return this.precio - ( this.precio * this.porcentajeDeDescuento );
+  };
+  return producto;
 } 
 
 // No modificar nada debajo de esta línea
